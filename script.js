@@ -431,8 +431,8 @@ function hotchocolate10() {
 }
 function minmult() {
   if (clicks > (1000000000000 * buyamount) - 1) {
-    minionmult += 1
-    clicks -= 1000000000000
+    minionmult += 1 * buyamount
+    clicks -= 1000000000000 * buyamount
     document.getElementById('clicker25').innerHTML
       = clicks;
     document.getElementById('cursors').innerHTML
