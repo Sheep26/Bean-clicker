@@ -99,7 +99,7 @@ function onbeansbuttonclicked() {
     = pizza;
   document.getElementById('hnum').innerHTML
     = hotchocolate;
-  document.title = clicks + " beans - Been Clicker"
+  document.title = clicks + " beans - Bean Clicker"
 }
 function cursors() {
   if (clicks > (15 * buyamount) - 1) {
