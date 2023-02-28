@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Bean Clicker</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="bean-style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <script>
@@ -16,14 +16,15 @@
     } else {
       minion_shop.style.display = "none";
     }
-    var cookie_shop = document.getElementById("Cookieshop");
-    cookie_shop.style.display = "none";
+    var beanshop = document.getElementById("beanshop");
+    beanshop.style.display = "none";
+    
     var upgradeshop = document.getElementById("upgradeshop");
     upgradeshop.style.display = "none";
   }
   function cheese12121() {
-    var cookie_shop = document.getElementById("Cookieshop");
-    cookie_shop.style.display = "none";
+    var beanshop = document.getElementById("beanshop");
+    beanshop.style.display = "none";
     var minion_shop = document.getElementById("minionshop");
     minion_shop.style.display = "none";
     var upgradeshop = document.getElementById("upgradeshop");
@@ -34,11 +35,11 @@
     }
   }
   function cheese121() {
-    var cookie_shop = document.getElementById("Cookieshop");
-    if (cookie_shop.style.display === "none") {
-      cookie_shop.style.display = "block";
+    var beanshop = document.getElementById("beanshop");
+    if (beanshop.style.display === "none") {
+      beanshop.style.display = "block";
     } else {
-      cookie_shop.style.display = "none";
+      beanshop.style.display = "none";
     }
     var minion_shop = document.getElementById("minionshop");
     minion_shop.style.display = "none";
@@ -48,7 +49,7 @@
 </script>
   
 <body>
-  <script src="script.js"></script>
+  <script src="bean-script.js"></script>
   </script>
   <div>
     <div class="beanclicker">
@@ -66,7 +67,7 @@
       <br>
       <h1 style="font-size: 40px;">Shop</h1>
       <button onclick="cheese121()">Bean shop</button> <button onclick="cheese1212()">Minion shop</button> <button onclick="cheese12121()">Upgrade shop</button><br><br>
-      <div id="Cookieshop" style="display: none">
+      <div id="beanshop" style="display: none">
         <button onclick="cursors()"><labal id = "cursorbuynum">1</labal> cursor <labal id="cursorcostnum">15</labal> beans</button>
         <label id="cursors" class="clicker25">0</label>
         <br>
@@ -97,11 +98,8 @@
         <br>
       </div>
       <div id="upgradeshop" style="display: none">
-        <button onclick="multit()"><labal id = "multbuynum">1</labal> cookie multiplyer <labal id ="32">1000000000</labal> beans</button>
+        <button onclick="multit()"><labal id = "multbuynum">1</labal> bean multiplyer <labal id ="32">1000000000</labal> beans</button>
         <label id="mnum" class="clicker25">1</label>
-        <Br>
-        <button onclick="minmult()"><labal id = "minmultbuynum">1</labal> minion multiplyer <labal id ="33">1000000000000</labal> beans</button>  
-        <label id="minnum" class="clicker25">1</label>
       </div>
     </div>
 </body>
