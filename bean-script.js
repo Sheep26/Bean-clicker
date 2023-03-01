@@ -14,6 +14,15 @@ var hotchocolate = 0
 var minionmult = 1
 var buyamount = 1
 var cursorcostnum = 15;
+var ovencostnum = 100;
+var minoincostnum = 1000;
+var minoigodncostnum = 250000;
+var farmcostnum = 5000;
+var shadescostnum = 50000;
+var yezcostnum = 1000000;
+var pizzacostnum = 1000000;
+var multcostnum = 1000000000;
+var hotchoccostnum = 10000000;
 const ALPHABET = ['K', ' Million', ' Billion', ' Trillion',  " Quadrillion", " Quintillion", " Sextillion ", " Septillion", " Octillion", " Nonillion", " Decillion", " Undecillion", " Duodecillion", " Tredecillion", " Quattuordecillion", " Quindecillion", " Sexdecillion", " Septemdecillion", " Octodecillion", " Novemdecillion", " Vigintillion", " Unvigintillion", " Duovigintillion", " Trevigintillion", " Quattuorvigintillion", " Quinvigintillion", " Sexvigintillion", " Septvigintillion", " Octovigintillion", " Nonvigintillion", " Trigintillion", " Untrigintillion", " Duotrigintillion", " Tretrigintillion"]
 const TRESHOLD = 1e3
 
@@ -70,23 +79,23 @@ function update_price(){
   document.getElementById('cursorcostnum').innerHTML
   = humanNumber(Math.round(cursorcostnum * buyamount));
   document.getElementById('ovenscostnum').innerHTML
-  = humanNumber(Math.round(100 * buyamount));
+  = humanNumber(Math.round(ovencostnum * buyamount));
   document.getElementById('25').innerHTML
-  = humanNumber(Math.round(1000 * buyamount));
+  = humanNumber(Math.round(minoincostnum * buyamount));
   document.getElementById('26').innerHTML
-  = humanNumber(Math.round(5000 * buyamount));
+  = humanNumber(Math.round(farmcostnum * buyamount));
   document.getElementById('27').innerHTML
-  = humanNumber(Math.round(1000000 * buyamount));
+  = humanNumber(Math.round(pizzacostnum * buyamount));
   document.getElementById('28').innerHTML
-  = humanNumber(Math.round(10000000 * buyamount));
+  = humanNumber(Math.round(hotchoccostnum * buyamount));
   document.getElementById('29').innerHTML
-  = humanNumber(Math.round(500000 * buyamount));
+  = humanNumber(Math.round(shadescostnum * buyamount));
   document.getElementById('30').innerHTML
-  = humanNumber(Math.round(1000000 * buyamount));
+  = humanNumber(Math.round(yezcostnum * buyamount));
   document.getElementById('31').innerHTML
-  = humanNumber(Math.round(250000 * buyamount));
+  = humanNumber(Math.round(minoigodncostnum * buyamount));
   document.getElementById('32').innerHTML
-  = humanNumber(Math.round(1000000000 * buyamount));
+  = humanNumber(Math.round(multcostnum * buyamount));
 }
 
 function update_amounts(){
@@ -128,8 +137,8 @@ function onbeansbuttonclicked() {
 function cursors() {
   if (clicks > (cursorcostnum * buyamount) - 1) {
     cursornum += 1 * buyamount
+    clicks -= cursorcostnum * buyamount
     cursorcostnum *= 1.15;
-    clicks -= 15 * buyamount
     update_amounts()
   }
   else {
@@ -137,21 +146,23 @@ function cursors() {
   }
 }
 
-//TODO Add prices for going up
 function ovensshop() {
-  if (clicks > (100 * buyamount) - 1) {
+  if (clicks > (ovencostnum * buyamount) - 1) {
     ovens += 1 * buyamount
-    clicks -= 100 * buyamount
+    clicks -= ovencostnum * buyamount
+    ovencostnum *= 1.15;
     update_amounts()
   }
   else {
     alert("not enough beans")
   }
 }
+
 function buymigits() {
-  if (clicks > (1000 * buyamount) - 1) {
+  if (clicks > (minoincostnum * buyamount) - 1) {
     migits += 1 * buyamount
-    clicks -= 1000 * buyamount
+    clicks -= minoincostnum * buyamount
+    minoincostnum *= 1.15
     update_amounts()
     if (migits > 249999) {
       if (migitsland < 1) {
@@ -166,11 +177,13 @@ function buymigits() {
     alert("not enough beans")
   }
 }
+
 function buymigitgod() {
   if (migitgod > 0) {
-    if (migits > (25000 * buyamount) - 1) {
-      migitgod += 1 * buyamount
-      migits -= 250000 * buyamount
+    if (migits > (minoigodncostnum * buyamount) - 1) {
+      migitgod += 1 * buyamount;
+      migits -= minoigodncostnum * buyamount;
+      minoigodncostnum *= 1.15;
       update_amounts()
     }
     else {
@@ -181,10 +194,12 @@ function buymigitgod() {
     alert("not unlocked")
   }
 }
+
 function buyfarm() {
-  if (clicks > (5000 * buyamount) - 1) {
+  if (clicks > (farmcostnum * buyamount) - 1) {
     farms += 1 * buyamount
-    clicks -= 5000 * buyamount
+    clicks -= farmcostnum * buyamount
+    farmcostnum *= 1.15
     update_amounts()
   }
   else {
@@ -192,9 +207,10 @@ function buyfarm() {
   }
 }
 function buyshades() {
-  if (migits > (50000 * buyamount) - 1) {
+  if (migits > (shadescostnum * buyamount) - 1) {
     shades += 1 * buyamount
-    migits -= 500000 * buyamount
+    shadescostnum *= 1.15
+    migits -= shadescostnum * buyamount
     update_amounts()
   }
   else {
@@ -202,9 +218,10 @@ function buyshades() {
   }
 }
 function buyyez() {
-  if (migits > (1000000 * buyamount) - 1) {
+  if (migits > (yezcostnum * buyamount) - 1) {
     yez += 1 * buyamount
-    migits -= 1000000 * buyamount
+    migits -= yezcostnum * buyamount
+    yezcostnum *= 1.15
     update_amounts()
   }
   else {
@@ -212,9 +229,10 @@ function buyyez() {
   }
 }
 function buypizza() {
-  if (clicks > (1000000 * buyamount) - 1) {
+  if (clicks > (pizzacostnum * buyamount) - 1) {
     pizza += 1 * buyamount
-    clicks -= 1000000 * buyamount
+    clicks -= pizzacostnum * buyamount
+    pizzacostnum *= 1.15
     update_amounts()
   }
   else {
@@ -222,9 +240,10 @@ function buypizza() {
   }
 }
 function multit() {
-  if (clicks > (1000000000 * buyamount) - 1) {
+  if (clicks > (multcostnum * buyamount) - 1) {
     mult += 1 * buyamount
-    clicks -= 1000000000 * buyamount
+    clicks -= multcostnum * buyamount
+    multcostnum *= 1.15
     update_amounts()
   }
   else {
@@ -232,9 +251,10 @@ function multit() {
   }
 }
 function hotchocolate10() {
-  if (clicks > (10000000 * buyamount) - 1) {
+  if (clicks > (hotchoccostnum * buyamount) - 1) {
     hotchocolate += 1 * buyamount
-    clicks -= 10000000 * buyamount
+    clicks -= hotchoccostnum * buyamount
+    hotchoccostnum *= 1.15
     update_amounts()
   }
   else {
