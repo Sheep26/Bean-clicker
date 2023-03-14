@@ -23,7 +23,7 @@ var yezcostnum = 1000000;
 var pizzacostnum = 1000000;
 var multcostnum = 1000000000;
 var hotchoccostnum = 10000000;
-const ALPHABET = ['K', ' Million', ' Billion', ' Trillion',  " Quadrillion", " Quintillion", " Sextillion ", " Septillion", " Octillion", " Nonillion", " Decillion", " Undecillion", " Duodecillion", " Tredecillion", " Quattuordecillion", " Quindecillion", " Sexdecillion", " Septemdecillion", " Octodecillion", " Novemdecillion", " Vigintillion", " Unvigintillion", " Duovigintillion", " Trevigintillion", " Quattuorvigintillion", " Quinvigintillion", " Sexvigintillion", " Septvigintillion", " Octovigintillion", " Nonvigintillion", " Trigintillion", " Untrigintillion", " Duotrigintillion", " Tretrigintillion"]
+const ALPHABET = ['K', ' Million', ' Billion', ' Trillion',  " Quadrillion", " Quintillion", " Sextillion ", " Septillion", " Octillion", " Nonillion", " Decillion", " Undecillion", " Duodecillion", " Tredecillion", " Quattuordecillion", " Quindecillion", " Sexdecillion", " Septemdecillion", " Octodecillion", " Novemdecillion", " Vigintillion", " Unvigintillion", " Duovigintillion", " Trevigintillion", " Quattuorvigintillion", " Quinvigintillion", " Sexvigintillion", " Septvigintillion", " Octovigintillion", " Nonvigintillion", " Trigintillion", " Untrigintillion", " Duotrigintillion", " Tretrigintillion", " Good job", " HOW", " UR JUST GOOD RIGHT?", " ong", " Good luck", " Big number"]
 const TRESHOLD = 1e3
 
 function humanNumber(n, fn){
@@ -134,6 +134,7 @@ function onbeansbuttonclicked() {
   migits += ((migitgod * 1000) * minionmult)
   update_amounts()
 }
+
 function cursors() {
   if (clicks > (cursorcostnum * buyamount) - 1) {
     cursornum += 1 * buyamount
@@ -209,8 +210,8 @@ function buyfarm() {
 function buyshades() {
   if (migits > (shadescostnum * buyamount) - 1) {
     shades += 1 * buyamount
-    shadescostnum *= 1.15
     migits -= shadescostnum * buyamount
+    shadescostnum *= 1.15
     update_amounts()
   }
   else {
@@ -265,6 +266,7 @@ function hotchocolate10() {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
 function gotogoogle(){
   location.replace("https://www.google.com")
 }
